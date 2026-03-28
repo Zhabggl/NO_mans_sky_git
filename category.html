@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文物分类 - 无人深空博物馆</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* 文物网格样式 */
+        .artifact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <!-- 背景星空效果 -->
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+    
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1>无人深空博物馆</h1>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">首页</a>
+                <a href="categories.html" class="active">文物分类</a>
+                <a href="search.html">搜索</a>
+                <a href="about.html">关于</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- 页面标题 -->
+    <header class="hero">
+        <div class="container">
+            <h1 class="hero-title" id="category-title">文物分类</h1>
+            <p class="hero-subtitle" id="category-description">探索宇宙文物</p>
+        </div>
+    </header>
+    
+    <!-- 文物列表 -->
+    <section class="artifacts">
+        <div class="container">
+            <div class="artifact-grid" id="artifact-grid">
+                <!-- 文物卡片将通过JavaScript动态生成 -->
+                <div class="loading" style="margin: 50px auto;"></div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 无人深空博物馆 | 本地部署版本</p>
+        </div>
+    </footer>
+    
+    <script src="js/analytics.js"></script>
+    <script src="js/interaction.js"></script>
+    <script>
+        // 获取图片的正确路径
+        function getImagePath(image) {
+            // 从图片文件名中提取分类
+            const parts = image.split('_');
+            if (parts.length >= 2) {
+                const category = parts[0];
+                return `uploads/${category}/${image}`;
+            }
+            return image;
+        }
+        
+        // 分类数据
+        const categoryData = {
+            "at": { "name": "阿特拉斯文物", "description": "与阿特拉斯相关的神秘文物" },
+            "bz": { "name": "标本类文物", "description": "各类生物和植物标本" },
+            "js": { "name": "技术装置", "description": "先进的科技设备" },
+            "sw": { "name": "生物文物", "description": "各种奇特的生物样本" },
+            "sy": { "name": "生物标本", "description": "详细的生物标本记录" },
+            "wx": { "name": "文献资料", "description": "古老的文字和记录" },
+            "yw": { "name": "遗物类文物", "description": "古代文明的遗留物品" },
+            "zg": { "name": "植物文物", "description": "珍稀的植物样本" },
+            "zw": { "name": "植物标本", "description": "详细的植物标本记录" }
+        };
+        
+        // 获取URL参数
+        function getUrlParam(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+        
+        // 生成文物卡片
+        function generateArtifactCards(category, artifacts) {
+            const artifactGrid = document.getElementById('artifact-grid');
+            artifactGrid.innerHTML = '';
+            
+            // 筛选指定分类的文物
+            const filteredArtifacts = artifacts.filter(artifact => artifact.category === category);
+            
+            // 生成卡片
+            filteredArtifacts.forEach(artifact => {
+                const likeCount = parseInt(localStorage.getItem(`artifact_likes_${artifact.id}`)) || 0;
+                const viewCount = parseInt(localStorage.getItem(`artifact_views_${artifact.id}`)) || 0;
+                
+                const card = document.createElement('div');
+                card.className = 'artifact-card';
+                const imagePath = getImagePath(artifact.image);
+                card.innerHTML = `
+                    <img src="${imagePath}" alt="${artifact.name}">
+                    <div class="card-content" data-artifact-id="${artifact.id}">
+                        <h3 class="artifact-name">${artifact.name}</h3>
+                        <p>${artifact.description}</p>
+                        <div class="stats-row" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; font-size: 0.9rem; color: #00f0ff;">
+                            <span class="like-stat">❤️ ${likeCount} 点赞</span>
+                            <span class="view-stat">👁️ ${viewCount} 浏览</span>
+                        </div>
+                        <div class="btn-group" style="display: flex; gap: 10px; margin-top: 15px;">
+                            <button class="btn secondary-btn like-button" data-artifact-id="${artifact.id}">
+                                <span class="like-icon">❤️</span>
+                                <span>点赞</span>
+                                <span class="like-count">${likeCount}</span>
+                            </button>
+                            <button class="btn secondary-btn share-button" data-artifact-id="${artifact.id}">
+                                <span class="share-icon">📤</span>
+                                <span>分享</span>
+                            </button>
+                            <a href="artifact.html?id=${artifact.id}" class="btn primary-btn" style="flex: 1; display: flex; align-items: center; justify-content: center;">查看详情</a>
+                        </div>
+                    </div>
+                `;
+                artifactGrid.appendChild(card);
+            });
+            
+            // 重新初始化互动功能，为动态生成的按钮绑定事件监听器
+            initLikeFunctionality();
+            initShareFunctionality();
+            restoreLikeStatus();
+        }
+        
+        // 加载文物数据
+        async function loadArtifactData() {
+            try {
+                const response = await fetch('data/artifacts.json');
+                const data = await response.json();
+                return data;
+            } catch (error) {
+                console.error('加载文物数据失败:', error);
+                return [];
+            }
+        }
+        
+        // 页面加载完成后初始化
+        document.addEventListener('DOMContentLoaded', async function() {
+            const category = getUrlParam('type') || 'at';
+            const categoryInfo = categoryData[category] || { name: '未知分类', description: '分类信息不存在' };
+            
+            // 更新页面标题
+            document.getElementById('category-title').textContent = categoryInfo.name;
+            document.getElementById('category-description').textContent = categoryInfo.description;
+            document.title = `${categoryInfo.name} - 无人深空博物馆`;
+            
+            // 加载文物数据并生成卡片
+            const artifacts = await loadArtifactData();
+            generateArtifactCards(category, artifacts);
+        });
+    </script>
+</body>
+</html>

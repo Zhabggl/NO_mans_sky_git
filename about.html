@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于 - 无人深空博物馆</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .about-content {
+            background: rgba(23, 42, 69, 0.8);
+            border-radius: 10px;
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .about-section {
+            margin-bottom: 40px;
+        }
+        
+        .about-section h3 {
+            color: #00f0ff;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+        }
+        
+        .about-section p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .feature-card {
+            background: rgba(10, 25, 47, 0.6);
+            border-radius: 10px;
+            padding: 30px;
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 240, 255, 0.3);
+            border-color: #00f0ff;
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: #00f0ff;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+        }
+        
+        .feature-card h4 {
+            color: #ffffff;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .stat-item {
+            background: rgba(10, 25, 47, 0.6);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid rgba(0, 240, 255, 0.2);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            color: #00f0ff;
+            font-weight: bold;
+            margin-bottom: 5px;
+            text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+        }
+        
+        .stat-label {
+            color: #8892b0;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .about-content {
+                padding: 20px;
+            }
+            
+            .features-grid,
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 背景星空效果 -->
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+    
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1>无人深空博物馆</h1>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">首页</a>
+                <a href="categories.html">文物分类</a>
+                <a href="search.html">搜索</a>
+                <a href="about.html" class="active">关于</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- 页面标题 -->
+    <header class="hero" style="height: 50vh; padding: 40px 0;">
+        <div class="container">
+            <h1 class="hero-title" style="font-size: 3rem; margin-bottom: 15px;">关于我们</h1>
+            <p class="hero-subtitle" style="font-size: 1.2rem; margin-bottom: 20px;">探索宇宙的奥秘，发现无人深空中的珍贵文物</p>
+        </div>
+    </header>
+    
+    <!-- 关于内容 -->
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-section">
+                    <h3>博物馆简介</h3>
+                    <p>无人深空博物馆是一个致力于收集和展示游戏《无人深空》中各类珍贵文物的虚拟博物馆。我们的使命是为玩家和爱好者提供一个集中展示、了解和探索游戏中丰富文物的平台。</p>
+                    <p>博物馆按文物类型进行分类，包括阿特拉斯相关、生物标本、技术装置等多个类别，为您提供全面的宇宙文化体验。</p>
+                </div>
+                
+                <div class="about-section">
+                    <h3>我们的特色</h3>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">🌌</div>
+                            <h4>科幻风格设计</h4>
+                            <p>采用星空背景、霓虹效果和未来感元素，营造出浓厚的宇宙探索氛围。</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🔍</div>
+                            <h4>详细的文物信息</h4>
+                            <p>每件文物都有详细的描述和相关信息，帮助您深入了解其背景和意义。</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">📱</div>
+                            <h4>响应式设计</h4>
+                            <p>适配各种设备屏幕，让您在电脑、平板或手机上都能享受良好的浏览体验。</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">⚡</div>
+                            <h4>流畅的交互体验</h4>
+                            <p>精心设计的动画效果和交互元素，为您带来沉浸式的博物馆体验。</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-section">
+                    <h3>博物馆数据</h3>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-number">9</div>
+                            <div class="stat-label">文物分类</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">84</div>
+                            <div class="stat-label">文物数量</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">5</div>
+                            <div class="stat-label">功能模块</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" id="visitor-count">0</div>
+                            <div class="stat-label">总访问量</div>
+                        </div>
+                    </div>
+                </div>
+                
+
+                
+                <div class="about-section">
+                    <h3>未来计划</h3>
+                    <p>我们计划在未来添加以下功能：</p>
+                    <ul style="margin-left: 20px; margin-bottom: 20px;">
+                        <li>虚拟导览功能</li>
+                        <li>文物故事背景扩展：深入挖掘每件文物的历史背景、文化意义和宇宙关联，构建完整的宇宙编年史</li>
+                        <li>多语言支持</li>
+                        <li>用户评论和互动功能</li>
+                        <li>文物投稿系统</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 无人深空博物馆</p>
+        </div>
+    </footer>
+    
+    <script src="js/analytics.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // 动态更新文物数量统计
+        function updateArtifactStats() {
+            // 从localStorage获取总文物数量
+            let totalArtifacts = localStorage.getItem('totalArtifacts');
+            if (totalArtifacts === null) {
+                // 如果没有存储，使用默认值
+                totalArtifacts = '84';
+            }
+            
+            // 更新页面上的文物数量
+            const artifactCountElement = document.querySelector('.stat-item:nth-child(2) .stat-number');
+            if (artifactCountElement) {
+                artifactCountElement.textContent = totalArtifacts;
+            }
+            
+            // 从localStorage获取各分类的文物数量
+            const categories = ['at', 'bz', 'js', 'sw', 'sy', 'wx', 'yw', 'zg', 'zw'];
+            let categoryCount = 0;
+            
+            categories.forEach(category => {
+                const maxId = localStorage.getItem(`maxId_${category}`);
+                if (maxId && parseInt(maxId) > 0) {
+                    categoryCount++;
+                }
+            });
+            
+            // 更新分类数量
+            const categoryCountElement = document.querySelector('.stat-item:nth-child(1) .stat-number');
+            if (categoryCountElement) {
+                categoryCountElement.textContent = categoryCount;
+            }
+        }
+        
+        // 页面加载时更新统计数据
+        document.addEventListener('DOMContentLoaded', function() {
+            updateArtifactStats();
+        });
+    </script>
+</body>
+</html>

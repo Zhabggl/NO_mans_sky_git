@@ -1,0 +1,714 @@
+[
+  {
+    "id": "at_1",
+    "name": "回音种子",
+    "description": "结晶智慧生命笼，智慧生命与亚特拉迪姆融为一体，是生命与水晶共生的象征",
+    "category": "at",
+    "categoryName": "阿特拉斯文物",
+    "image": "at_1.png"
+  },
+  {
+    "id": "at_2",
+    "name": "大海的回忆",
+    "description": "阿特拉斯碎片，是宇宙的一块碎片，可在群星中被唤醒，见证一段可能的过去",
+    "category": "at",
+    "categoryName": "阿特拉斯文物",
+    "image": "at_2.png"
+  },
+  {
+    "id": "at_3",
+    "name": "骸骨的回忆",
+    "description": "阿特拉斯碎片，是宇宙的一块碎片，可在群星中被唤醒，见证一段可能的过去",
+    "category": "at",
+    "categoryName": "阿特拉斯文物",
+    "image": "at_3.png"
+  },
+  {
+    "id": "at_4",
+    "name": "虚空的回忆",
+    "description": "阿特拉斯碎片，是宇宙的一块碎片，可在群星中被唤醒，见证一段可能的过去",
+    "category": "at",
+    "categoryName": "阿特拉斯文物",
+    "image": "at_4.png"
+  },
+  {
+    "id": "at_5",
+    "name": "力量之种",
+    "description": "创造之种，源于阿特拉斯，蕴含难以言喻的能量，可共鸣转化为可听见的频率",
+    "category": "at",
+    "categoryName": "阿特拉斯文物",
+    "image": "at_5.png"
+  },
+  {
+    "id": "at_6",
+    "name": "生命之种",
+    "description": "创造之种，源于阿特拉斯，包含整个宇宙的潜能，可共鸣转化为可听见的频率",
+    "category": "at",
+    "categoryName": "阿特拉斯文物",
+    "image": "at_6.png"
+  },
+  {
+    "id": "at_7",
+    "name": "希望之种",
+    "description": "创造之种，代表无限的完美水滴，是阿特拉斯给予的关于梦、意志与生命的碎片",
+    "category": "at",
+    "categoryName": "阿特拉斯文物",
+    "image": "at_7.png"
+  },
+  {
+    "id": "at_8",
+    "name": "水之灵药",
+    "description": "异界混合物，容器中的水无限延伸，可用于与深水之中的存在进行接触",
+    "category": "at",
+    "categoryName": "阿特拉斯文物",
+    "image": "at_8.png"
+  },
+  {
+    "id": "at_9",
+    "name": "玻璃灵药",
+    "description": "异界混合物，可维持本地边界完整性，避免边界之外的惧物入侵",
+    "category": "at",
+    "categoryName": "阿特拉斯文物",
+    "image": "at_9.png"
+  },
+  {
+    "id": "at_10",
+    "name": "鲜血灵药",
+    "description": "异界混合物，可与现实边界之外的存在进行通讯，是探索宇宙未知的媒介",
+    "category": "at",
+    "categoryName": "阿特拉斯文物",
+    "image": "at_10.png"
+  },
+  {
+    "id": "at_11",
+    "name": "鲜血灵药",
+    "description": "异界混合物，可与现实边界之外的存在进行通讯，是探索宇宙未知的媒介",
+    "category": "at",
+    "categoryName": "阿特拉斯文物",
+    "image": "at_11.png"
+  },
+  {
+    "id": "at_12",
+    "name": "太阳之心",
+    "description": "独特的珍品，阿特拉斯之种，包含时间锁定的量子纤毛，可用于升级",
+    "category": "at",
+    "categoryName": "阿特拉斯文物",
+    "image": "at_12.png"
+  },
+  {
+    "id": "at_13",
+    "name": "鲜血灵药",
+    "description": "异界混合物，可与现实边界之外的存在进行通讯，是探索宇宙未知的媒介",
+    "category": "at",
+    "categoryName": "阿特拉斯文物",
+    "image": "at_13.png"
+  },
+  {
+    "id": "at_14",
+    "name": "鲜血灵药",
+    "description": "异界混合物，可与现实边界之外的存在进行通讯，是探索宇宙未知的媒介",
+    "category": "at",
+    "categoryName": "阿特拉斯文物",
+    "image": "at_14.png"
+  },
+  {
+    "id": "at_15",
+    "name": "鲜血灵药",
+    "description": "异界混合物，可与现实边界之外的存在进行通讯，是探索宇宙未知的媒介",
+    "category": "at",
+    "categoryName": "阿特拉斯文物",
+    "image": "at_15.png"
+  },
+  {
+    "id": "bz_1",
+    "name": "吉克小吸",
+    "description": "深受吉克喜爱的食品，可使有喙商人长时间释放气味宜人的气体包",
+    "category": "bz",
+    "categoryName": "标本类文物",
+    "image": "bz_1.png"
+  },
+  {
+    "id": "bz_2",
+    "name": "集会方型箱",
+    "description": "科尔瓦克斯用于存储历史文化信息的设备，可用于升级",
+    "category": "bz",
+    "categoryName": "标本类文物",
+    "image": "bz_2.png"
+  },
+  {
+    "id": "bz_3",
+    "name": "催眠的牙齿的储存箱",
+    "description": "约 731 年历史的地下宝藏，被刻意埋藏，背后是一段关于回归与等待的未解之谜",
+    "category": "bz",
+    "categoryName": "标本类文物",
+    "image": "bz_3.png"
+  },
+  {
+    "id": "bz_4",
+    "name": "特殊的丝绸的包裹",
+    "description": "约 283 年历史的地下宝藏，对埋藏者意义非凡，其现代价值值得怀疑",
+    "category": "bz",
+    "categoryName": "标本类文物",
+    "image": "bz_4.png"
+  },
+  {
+    "id": "bz_5",
+    "name": "受污染的 饰品",
+    "description": "约 464 年历史的地下宝藏，布满灰尘，是重要的历史遗物",
+    "category": "bz",
+    "categoryName": "标本类文物",
+    "image": "bz_5.png"
+  },
+  {
+    "id": "bz_6",
+    "name": "含硫磺 鲸须雕刻",
+    "description": "保存完好的海洋珍宝，被海胆保护，对古代制品收藏家价值极高",
+    "category": "bz",
+    "categoryName": "标本类文物",
+    "image": "bz_6.png"
+  },
+  {
+    "id": "bz_7",
+    "name": "辉煌的材料的储存箱",
+    "description": "约 462 年历史的地下宝藏，布满灰尘，是重要的历史遗物",
+    "category": "bz",
+    "categoryName": "标本类文物",
+    "image": "bz_7.png"
+  },
+  {
+    "id": "bz_8",
+    "name": "维吉恩 小雕像",
+    "description": "约 440 年历史的地下宝藏，布满灰尘，是重要的历史遗物",
+    "category": "bz",
+    "categoryName": "标本类文物",
+    "image": "bz_8.png"
+  },
+  {
+    "id": "bz_9",
+    "name": "警觉的石头",
+    "description": "活石守护者留下的遗物，永远守护着远古生物的埋葬地，惊动它可能唤醒守护者",
+    "category": "bz",
+    "categoryName": "标本类文物",
+    "image": "bz_9.png"
+  },
+  {
+    "id": "bz_10",
+    "name": "集会方型箱",
+    "description": "科尔瓦克斯用于存储历史文化信息的设备，可用于升级",
+    "category": "bz",
+    "categoryName": "标本类文物",
+    "image": "bz_10.png"
+  },
+  {
+    "id": "bz_11",
+    "name": "永恒的 丝绸",
+    "description": "约 869 年历史的地下宝藏，被刻意埋藏，背后是一段关于回归与等待的未解之谜",
+    "category": "bz",
+    "categoryName": "标本类文物",
+    "image": "bz_11.png"
+  },
+  {
+    "id": "js_1",
+    "name": "潜力垂钓海绵",
+    "description": "约 695 年历史的失落工具，虽用途不明，但灼烧痕迹暗示其传奇过往",
+    "category": "js",
+    "categoryName": "技术装置",
+    "image": "js_1.png"
+  },
+  {
+    "id": "js_2",
+    "name": "神秘信标",
+    "description": "试验召唤技术，广播与纳达史学波动相适应的信号回音，结果难以预测",
+    "category": "js",
+    "categoryName": "技术装置",
+    "image": "js_2.png"
+  },
+  {
+    "id": "js_3",
+    "name": "核融起爆机",
+    "description": "银河顶级高精制技术造物，价值连城，代表星系工业与能源科技的巅峰",
+    "category": "js",
+    "categoryName": "技术装置",
+    "image": "js_3.png"
+  },
+  {
+    "id": "js_4",
+    "name": "紧急信号扫描仪",
+    "description": "一次性接收器，可扫描货船频率中的求救信号，定位荒度或废弃货船",
+    "category": "js",
+    "categoryName": "技术装置",
+    "image": "js_4.png"
+  },
+  {
+    "id": "js_5",
+    "name": "异象探测器",
+    "description": "一次性几何信标，可探测近空异象，是探索宇宙未知的工具",
+    "category": "js",
+    "categoryName": "技术装置",
+    "image": "js_5.png"
+  },
+  {
+    "id": "js_6",
+    "name": "伪造护照",
+    "description": "覆写数字记录，伪造的飞船注册文件，可重置空间站派系声望，是改写命运的象征",
+    "category": "js",
+    "categoryName": "技术装置",
+    "image": "js_6.png"
+  },
+  {
+    "id": "js_7",
+    "name": "格拉格拉",
+    "description": "被禁止的维吉恩战斗气体，在亡命徒星系外倒卖可获暴利，是银河地下贸易的缩影",
+    "category": "js",
+    "categoryName": "技术装置",
+    "image": "js_7.png"
+  },
+  {
+    "id": "js_8",
+    "name": "矿物记录:BIJONEZI矿",
+    "description": "来自行星 Iggie 的矿物发现资料，由科尔瓦克斯探险家收集，富含晶球和铂元素",
+    "category": "js",
+    "categoryName": "技术装置",
+    "image": "js_8.png"
+  },
+  {
+    "id": "js_9",
+    "name": "耐嚼电线",
+    "description": "奇怪的有机电线，可在营养处理器中处理为 \"可食用\" 产品，是宇宙资源循环的奇特案例",
+    "category": "js",
+    "categoryName": "技术装置",
+    "image": "js_9.png"
+  },
+  {
+    "id": "sw_1",
+    "name": "珍稀的 豆子",
+    "description": "约 1042 年历史的生物样本，可发芽生长，是外星生命繁殖与适应性的重要样本",
+    "category": "sw",
+    "categoryName": "生物文物",
+    "image": "sw_1.png"
+  },
+  {
+    "id": "sw_2",
+    "name": "凝结的蓟盒子",
+    "description": "约 1018 年历史的生物样本，可发芽生长，是外星生命繁殖与适应性的重要样本",
+    "category": "sw",
+    "categoryName": "生物文物",
+    "image": "sw_2.png"
+  },
+  {
+    "id": "sw_3",
+    "name": "引起幻觉的花罐",
+    "description": "约 1049 年历史的生物样本，可发芽生长，其致幻特性是外星生物化学的研究热点",
+    "category": "sw",
+    "categoryName": "生物文物",
+    "image": "sw_3.png"
+  },
+  {
+    "id": "sw_4",
+    "name": "冻结的 心脏",
+    "description": "深渊惧兽的骇人遗骸，至少存在 110 世，会跟踪持有者穿越星系，充满诅咒与神秘",
+    "category": "sw",
+    "categoryName": "生物文物",
+    "image": "sw_4.png"
+  },
+  {
+    "id": "sw_5",
+    "name": "保藏的 哺乳动物 囊",
+    "description": "约 814 年历史的化石样本，揭示了远古生物的生活习性，是演化研究的重要证据",
+    "category": "sw",
+    "categoryName": "生物文物",
+    "image": "sw_5.png"
+  },
+  {
+    "id": "sw_6",
+    "name": "哭泣的 样本",
+    "description": "深渊骇物的闹鬼遗骸，至少活了 40 辈子，会跟随持有者，是宇宙恐怖现象的见证",
+    "category": "sw",
+    "categoryName": "生物文物",
+    "image": "sw_6.png"
+  },
+  {
+    "id": "sw_7",
+    "name": "宝贵的臭虫罐",
+    "description": "约 245 年历史的生物样本，散发酸臭味，处于发酵状态，是外星微生物生态的研究素材",
+    "category": "sw",
+    "categoryName": "生物文物",
+    "image": "sw_7.png"
+  },
+  {
+    "id": "sw_8",
+    "name": "充分研究的树皮罐",
+    "description": "约 1064 年历史的生物样本，可发芽生长，是经过充分研究的外星生命繁殖案例",
+    "category": "sw",
+    "categoryName": "生物文物",
+    "image": "sw_8.png"
+  },
+  {
+    "id": "sw_9",
+    "name": "寒冷的 胶袋",
+    "description": "深渊骇物的闹鬼遗骸，至少活了 30 辈子，会跟随持有者，是宇宙恐怖现象的见证",
+    "category": "sw",
+    "categoryName": "生物文物",
+    "image": "sw_9.png"
+  },
+  {
+    "id": "sw_10",
+    "name": "化石的猫科动物 腹",
+    "description": "约 913 年历史的古老化石，在被消失的文明储存前就已存在，真实年份成谜",
+    "category": "sw",
+    "categoryName": "生物文物",
+    "image": "sw_10.png"
+  },
+  {
+    "id": "sw_11",
+    "name": "幼虫核心",
+    "description": "怪物的胶粘球体，摸起来温暖，恶臭能激起人类原始恐惧，是外星生物的恐怖样本",
+    "category": "sw",
+    "categoryName": "生物文物",
+    "image": "sw_11.png"
+  },
+  {
+    "id": "sw_13",
+    "name": "人工的 地衣",
+    "description": "约 992 年历史的生物样本，可在光和空气中发芽生长，是外星生命繁殖方式的独特案例",
+    "category": "sw",
+    "categoryName": "生物文物",
+    "image": "sw_13.png"
+  },
+  {
+    "id": "sy_1",
+    "name": "深海猎人",
+    "description": "修长、致命而且完美，真正的深海恶魔",
+    "category": "sy",
+    "categoryName": "生物标本",
+    "image": "sy_1.png"
+  },
+  {
+    "id": "sy_1",
+    "name": "巨兽子嗣",
+    "description": "只有再经历数千年的岁月之后，它才能自己的伟大同胞们一起遨游在星辰之间……",
+    "category": "sy",
+    "categoryName": "生物标本",
+    "image": "sy_1.png"
+  },
+  {
+    "id": "sy_1_1",
+    "name": "生物标本1",
+    "description": "这是一件生物标本。",
+    "category": "sy",
+    "categoryName": "生物标本",
+    "image": "sy_1_1.png"
+  },
+  {
+    "id": "wx_1",
+    "name": "维吉恩石碑",
+    "description": "刻有古老维吉恩文字的石碑，工艺精细，是维吉恩文明宗教与历史的重要载体",
+    "category": "wx",
+    "categoryName": "文献资料",
+    "image": "wx_1.png"
+  },
+  {
+    "id": "wx_2",
+    "name": "古代的杂录",
+    "description": "约 460 年历史的手稿，手迹超凡，批注与图表揭示了令人不安的古代知识",
+    "category": "wx",
+    "categoryName": "文献资料",
+    "image": "wx_2.png"
+  },
+  {
+    "id": "wx_3",
+    "name": "船员名单 机动飞船",
+    "description": "机动飞船 Sakaw XVII 的官方船员名单，对研究失踪飞船命运至关重要",
+    "category": "wx",
+    "categoryName": "文献资料",
+    "image": "wx_3.png"
+  },
+  {
+    "id": "wx_4",
+    "name": "船长日志 机动飞船",
+    "description": "从 Sakaw XVII 上加密下载的日志，是寻找沉船最后几天信息的关键线索",
+    "category": "wx",
+    "categoryName": "文献资料",
+    "image": "wx_4.png"
+  },
+  {
+    "id": "wx_5",
+    "name": "易碎的事件卷宗",
+    "description": "约 464 年历史的纸稿，墨迹褪色，是人们在岁月摧毁手稿前阅读它的最后机会",
+    "category": "wx",
+    "categoryName": "文献资料",
+    "image": "wx_5.png"
+  },
+  {
+    "id": "wx_6",
+    "name": "下流的照片",
+    "description": "约 1042 年历史的文档，包裹严密，内夹毛发，记录了一段被刻意掩盖的下流往事",
+    "category": "wx",
+    "categoryName": "文献资料",
+    "image": "wx_6.png"
+  },
+  {
+    "id": "wx_7",
+    "name": "虫蜕经书:1",
+    "description": "肉质文卷，刻有关于 \"蠕虫领主\" 的古老文字，是神秘教派的核心教义文献",
+    "category": "wx",
+    "categoryName": "文献资料",
+    "image": "wx_7.png"
+  },
+  {
+    "id": "wx_8",
+    "name": "虫蜕经书:2",
+    "description": "肉质文卷，提及 \"阿特拉斯的血脉\"，是理解宇宙神秘力量的关键文本",
+    "category": "wx",
+    "categoryName": "文献资料",
+    "image": "wx_8.png"
+  },
+  {
+    "id": "wx_9",
+    "name": "崇高的 自传",
+    "description": "约 269 年历史的手稿，手迹超凡，批注与图表揭示了令人不安的历史细节",
+    "category": "wx",
+    "categoryName": "文献资料",
+    "image": "wx_9.png"
+  },
+  {
+    "id": "wx_10",
+    "name": "珍稀的 法律诉讼",
+    "description": "约 1525 年历史的手稿，纸页布满水渍，记录了一段被淹没的法律争议与社会动荡",
+    "category": "wx",
+    "categoryName": "文献资料",
+    "image": "wx_10.png"
+  },
+  {
+    "id": "wx_11",
+    "name": "异端的 木刻版画",
+    "description": "约 1899 年历史的手稿，纸页布满水渍，是一段异端思想与历史的见证",
+    "category": "wx",
+    "categoryName": "文献资料",
+    "image": "wx_11.png"
+  },
+  {
+    "id": "yw_1",
+    "name": "被咬过的散热器",
+    "description": "约 435 年历史的回收废料，虽效用过时，但内含稀有物质，价值不菲",
+    "category": "yw",
+    "categoryName": "遗物类文物",
+    "image": "yw_1.png"
+  },
+  {
+    "id": "yw_2",
+    "name": "引力微子球",
+    "description": "超对称粒子簇，提取时会产生微型裂缝，护卫部队会做出反应稳定异象",
+    "category": "yw",
+    "categoryName": "遗物类文物",
+    "image": "yw_2.png"
+  },
+  {
+    "id": "yw_3",
+    "name": "被咬过的散热器",
+    "description": "约 435 年历史的回收废料，虽效用过时，但内含稀有物质，价值不菲",
+    "category": "yw",
+    "categoryName": "遗物类文物",
+    "image": "yw_3.png"
+  },
+  {
+    "id": "yw_4",
+    "name": "古老的活页乐谱",
+    "description": "约 1003 年历史的历史文献，内容被多次篡改，见证了创作者之间的激烈争执",
+    "category": "yw",
+    "categoryName": "遗物类文物",
+    "image": "yw_4.png"
+  },
+  {
+    "id": "yw_5",
+    "name": "肮脏的连接器",
+    "description": "约 891 年历史的回收废料，设计脱离常规但质量卓越，在收藏家眼中价值不菲",
+    "category": "yw",
+    "categoryName": "遗物类文物",
+    "image": "yw_5.png"
+  },
+  {
+    "id": "yw_6",
+    "name": "有壳的散热器",
+    "description": "约 470 年历史的回收废料，违反银河制造协议，由业余爱好者打造但功能有效",
+    "category": "yw",
+    "categoryName": "遗物类文物",
+    "image": "yw_6.png"
+  },
+  {
+    "id": "yw_7",
+    "name": "嗡嗡的进口",
+    "description": "约 467 年历史的回收废料，是吉克飞船建造的核心技术，常被改造为强化艇维修模块",
+    "category": "yw",
+    "categoryName": "遗物类文物",
+    "image": "yw_7.png"
+  },
+  {
+    "id": "yw_9",
+    "name": "古代的钥匙",
+    "description": "永恒的遗物，一把有分量的锻造铁块，可用来打开附近的某把锁",
+    "category": "yw",
+    "categoryName": "遗物类文物",
+    "image": "yw_9.png"
+  },
+  {
+    "id": "yw_9",
+    "name": "宝贵的 钻石",
+    "description": "约 394 年历史的地下宝藏，布满灰尘，是当时的稀世之宝",
+    "category": "yw",
+    "categoryName": "遗物类文物",
+    "image": "yw_9.png"
+  },
+  {
+    "id": "yw_9_1",
+    "name": "遗物类文物9",
+    "description": "这是一件遗物类文物。",
+    "category": "yw",
+    "categoryName": "遗物类文物",
+    "image": "yw_9_1.png"
+  },
+  {
+    "id": "yw_10",
+    "name": "华丽园艺铁铲",
+    "description": "约 803 年历史的失落遗物，满是灼烧痕迹，背后是一段被掩埋的传奇生涯",
+    "category": "yw",
+    "categoryName": "遗物类文物",
+    "image": "yw_10.png"
+  },
+  {
+    "id": "zg_1",
+    "name": "意志之种",
+    "description": "创造之种，源于阿特拉斯，包含对 \"存在\" 的遏制与渴望，可共鸣转化为频率",
+    "category": "zg",
+    "categoryName": "植物文物",
+    "image": "zg_1.png"
+  },
+  {
+    "id": "zg_2",
+    "name": "圆滑的 宝藏",
+    "description": "带有神秘家族徽章的远古宝藏，承载失落文明的寻根传奇，充满悬念与史诗感",
+    "category": "zg",
+    "categoryName": "植物文物",
+    "image": "zg_2.png"
+  },
+  {
+    "id": "zg_3",
+    "name": "绝望哀嚎",
+    "description": "循环遗物，在重要地点回想起被遗忘的东西，象征 \"死亡不是结束，循环将会继续\"",
+    "category": "zg",
+    "categoryName": "植物文物",
+    "image": "zg_3.png"
+  },
+  {
+    "id": "zg_4",
+    "name": "手工制作的法令",
+    "description": "近 1800 年历史的珍贵文献，纸页饱经岁月，记录一段被遗忘的银河文明争议史",
+    "category": "zg",
+    "categoryName": "植物文物",
+    "image": "zg_4.png"
+  },
+  {
+    "id": "zg_5",
+    "name": "怪异的骨头碎片",
+    "description": "超万年远古化石，是早期生命与文明互动的关键证据，堪称生命演化史的瑰宝",
+    "category": "zg",
+    "categoryName": "植物文物",
+    "image": "zg_5.png"
+  },
+  {
+    "id": "zg_6",
+    "name": "碳化的 甲壳动物 喙",
+    "description": "约 303 年历史的化石，保存完好，展示了曾在世界漫游的奇异甲壳生物。",
+    "category": "zg",
+    "categoryName": "植物文物",
+    "image": "zg_6.png"
+  },
+  {
+    "id": "zg_7",
+    "name": "光彩夺目 焊接工的 车轮",
+    "description": "近 2900 年历史的传奇工匠遗物，镶嵌稀有宝石，背后是一段横跨星系的工匠传奇。",
+    "category": "zg",
+    "categoryName": "植物文物",
+    "image": "zg_7.png"
+  },
+  {
+    "id": "zg_8",
+    "name": "最初的 动物 外骨骼",
+    "description": "超千年远古化石，是早期生命与文明互动的关键证据，堪称生命演化史的瑰宝",
+    "category": "zg",
+    "categoryName": "植物文物",
+    "image": "zg_8.png"
+  },
+  {
+    "id": "zw_1",
+    "name": "新鲜的棉花草果实",
+    "description": "约 263 年历史的突变植物，孢子规模异常，是外星生态突变现象的研究素材",
+    "category": "zw",
+    "categoryName": "植物标本",
+    "image": "zw_1.png"
+  },
+  {
+    "id": "zw_2",
+    "name": "粘土毒药 花粉",
+    "description": "约 303 年历史的常见野草，气味微弱，是外星植物毒性与生态位的研究样本",
+    "category": "zw",
+    "categoryName": "植物标本",
+    "image": "zw_2.png"
+  },
+  {
+    "id": "zw_3",
+    "name": "突变的蟾蜍毒药种子",
+    "description": "约 689 年历史的强效草药，掌控普通风寒的治愈关键，应置于可克隆器皿中研究",
+    "category": "zw",
+    "categoryName": "植物标本",
+    "image": "zw_3.png"
+  },
+  {
+    "id": "zw_4",
+    "name": "爪子浆果 插枝",
+    "description": "约 825 年历史的强效草药，可用于治愈风寒，是外星植物医药价值的典型代表",
+    "category": "zw",
+    "categoryName": "植物标本",
+    "image": "zw_4.png"
+  },
+  {
+    "id": "zw_5",
+    "name": "梦木材 栽培变种",
+    "description": "约 760 年历史的多汁植物，根茎坚实多肉，是外星生态中可食用资源的范例",
+    "category": "zw",
+    "categoryName": "植物标本",
+    "image": "zw_5.png"
+  },
+  {
+    "id": "zw_6",
+    "name": "稀有的神经 - 长者块茎",
+    "description": "约 1002 年历史的强效草药，是治愈风寒的关键，其神经活性成分极具研究价值",
+    "category": "zw",
+    "categoryName": "植物标本",
+    "image": "zw_6.png"
+  },
+  {
+    "id": "zw_6",
+    "name": "有毒的霉菌野草样本",
+    "description": "约 360 年历史的野草，分布广泛，是外星植物毒性与生态位的研究样本",
+    "category": "zw",
+    "categoryName": "植物标本",
+    "image": "zw_6.png"
+  },
+  {
+    "id": "zw_6_1",
+    "name": "植物标本6",
+    "description": "这是一件植物标本。",
+    "category": "zw",
+    "categoryName": "植物标本",
+    "image": "zw_6_1.png"
+  },
+  {
+    "id": "zw_7",
+    "name": "遗失的电车井浆果",
+    "description": "约 296 年历史的突变植物，孢子规模异常，是外星生态突变现象的研究素材",
+    "category": "zw",
+    "categoryName": "植物标本",
+    "image": "zw_7.png"
+  }
+]

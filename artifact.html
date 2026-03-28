@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文物详情 - 无人深空博物馆</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .artifact-detail {
+            background: rgba(23, 42, 69, 0.8);
+            border-radius: 10px;
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .artifact-image {
+            width: 100%;
+            max-height: 500px;
+            object-fit: contain;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(0, 240, 255, 0.3);
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+        }
+        
+        .artifact-info {
+            margin-bottom: 30px;
+        }
+        
+        .artifact-info h2 {
+            color: #00f0ff;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+        }
+        
+        .artifact-category {
+            display: inline-block;
+            background: rgba(0, 240, 255, 0.1);
+            color: #00f0ff;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            border: 1px solid rgba(0, 240, 255, 0.3);
+        }
+        
+        .artifact-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+        
+        .artifact-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .meta-item {
+            background: rgba(10, 25, 47, 0.6);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid rgba(0, 240, 255, 0.2);
+        }
+        
+        .meta-item h4 {
+            color: #00f0ff;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .meta-item p {
+            margin: 0;
+            color: #8892b0;
+        }
+        
+        .related-artifacts {
+            margin-top: 50px;
+        }
+        
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .related-card {
+            background: rgba(10, 25, 47, 0.6);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .related-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 240, 255, 0.3);
+            border-color: #00f0ff;
+        }
+        
+        .related-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+        }
+        
+        .related-card .card-content {
+            padding: 15px;
+        }
+        
+        .related-card h4 {
+            color: #ffffff;
+            margin-bottom: 5px;
+            font-size: 1rem;
+        }
+        
+        .related-card p {
+            color: #8892b0;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+        
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        @media (max-width: 768px) {
+            .artifact-detail {
+                padding: 20px;
+            }
+            
+            .artifact-info h2 {
+                font-size: 2rem;
+            }
+            
+            .btn-group {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 背景星空效果 -->
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+    
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1>无人深空博物馆</h1>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">首页</a>
+                <a href="categories.html">文物分类</a>
+                <a href="search.html">搜索</a>
+                <a href="about.html">关于</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- 文物详情 -->
+    <section class="artifact-section">
+        <div class="container">
+            <div class="artifact-detail" id="artifact-detail">
+                <!-- 文物详情将通过JavaScript动态生成 -->
+                <div class="loading" style="margin: 100px auto;"></div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 无人深空博物馆</p>
+        </div>
+    </footer>
+    
+    <script src="js/analytics.js"></script>
+    <script src="js/interaction.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // 获取图片的正确路径
+        function getImagePath(image) {
+            // 从图片文件名中提取分类
+            const parts = image.split('_');
+            if (parts.length >= 2) {
+                const category = parts[0];
+                return `uploads/${category}/${image}`;
+            }
+            return image;
+        }
+        
+        // 分类数据
+        const categoryData = {
+            "at": { "name": "阿特拉斯文物", "description": "与阿特拉斯相关的神秘文物" },
+            "bz": { "name": "标本类文物", "description": "各类生物和植物标本" },
+            "js": { "name": "技术装置", "description": "先进的科技设备" },
+            "sw": { "name": "生物文物", "description": "各种奇特的生物样本" },
+            "sy": { "name": "生物标本", "description": "详细的生物标本记录" },
+            "wx": { "name": "文献资料", "description": "古老的文字和记录" },
+            "yw": { "name": "遗物类文物", "description": "古代文明的遗留物品" },
+            "zg": { "name": "植物文物", "description": "珍稀的植物样本" },
+            "zw": { "name": "植物标本", "description": "详细的植物标本记录" }
+        };
+        
+        // 获取URL参数
+        function getUrlParam(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+        
+        // 获取点赞数量（辅助函数）
+        function getArtifactLikeCount(artifactId) {
+            return parseInt(localStorage.getItem(`artifact_likes_${artifactId}`)) || 0;
+        }
+        
+        // 加载文物数据
+        async function loadArtifactData() {
+            try {
+                console.log('开始加载文物数据...');
+                const response = await fetch('data/artifacts.json');
+                console.log('响应状态:', response.status);
+                if (!response.ok) {
+                    throw new Error(`HTTP 错误! 状态: ${response.status}`);
+                }
+                const data = await response.json();
+                console.log('数据加载成功:', data.length);
+                return data;
+            } catch (error) {
+                console.error('加载文物数据失败:', error);
+                return [];
+            }
+        }
+        
+        // 生成文物详情
+        async function generateArtifactDetail(artifactId) {
+            const artifactDetail = document.getElementById('artifact-detail');
+            
+            // 加载文物数据
+            const artifacts = await loadArtifactData();
+            
+            // 查找指定文物
+            const artifact = artifacts.find(a => a.id === artifactId);
+            
+            if (!artifact) {
+                artifactDetail.innerHTML = `
+                    <div style="text-align: center; padding: 50px;">
+                        <h2>文物不存在</h2>
+                        <p>请检查文物ID是否正确</p>
+                        <a href="categories.html" class="btn primary-btn">返回分类页面</a>
+                    </div>
+                `;
+                return;
+            }
+            
+            // 生成相关文物
+            const relatedArtifacts = generateRelatedArtifacts(artifact.category, artifactId, artifacts);
+            
+            // 生成详情HTML
+            const imagePath = getImagePath(artifact.image);
+            artifactDetail.innerHTML = `
+                <img src="${imagePath}" alt="${artifact.name}" class="artifact-image">
+                <div class="artifact-info">
+                    <h2>${artifact.name}</h2>
+                    <span class="artifact-category">${artifact.categoryName}</span>
+                    <p class="artifact-description">${artifact.description}</p>
+                    
+                    <div class="artifact-meta">
+                        <div class="meta-item">
+                            <h4>发现日期</h4>
+                            <p>${getRandomDate()}</p>
+                        </div>
+                        <div class="meta-item">
+                            <h4>来源星球</h4>
+                            <p>${getRandomOrigin()}</p>
+                        </div>
+                        <div class="meta-item">
+                            <h4>稀有程度</h4>
+                            <p>${getRandomRarity()}</p>
+                        </div>
+                        <div class="meta-item">
+                            <h4>分类编号</h4>
+                            <p>${artifact.id}</p>
+                        </div>
+                    </div>
+                    
+                    <div class="btn-group">
+                        <button class="btn secondary-btn like-button" data-artifact-id="${artifact.id}">
+                            <span class="like-icon">❤️</span>
+                            <span>点赞</span>
+                            <span class="like-count">${getArtifactLikeCount(artifact.id)}</span>
+                        </button>
+                        <button class="btn secondary-btn share-button" data-artifact-id="${artifact.id}">
+                            <span class="share-icon">📤</span>
+                            <span>分享</span>
+                        </button>
+                        <a href="category.html?type=${artifact.category}" class="btn secondary-btn">返回${artifact.categoryName}分类</a>
+                        <a href="categories.html" class="btn secondary-btn">查看所有分类</a>
+                        <a href="index.html" class="btn primary-btn">返回首页</a>
+                    </div>
+                </div>
+                
+                <div class="related-artifacts">
+                    <h3 class="section-title">相关文物</h3>
+                    <div class="related-grid">
+                        ${relatedArtifacts.map(item => `
+                            <a href="artifact.html?id=${item.id}" class="related-card">
+                                <img src="${getImagePath(item.image)}" alt="${item.name}">
+                                <div class="card-content">
+                                    <h4>${item.name}</h4>
+                                    <p>${item.description.substring(0, 80)}...</p>
+                                </div>
+                            </a>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+            
+            // 更新页面标题
+            document.title = `${artifact.name} - 无人深空博物馆`;
+            
+            // 重新初始化互动功能，为动态生成的按钮绑定事件监听器
+            initLikeFunctionality();
+            initShareFunctionality();
+            restoreLikeStatus();
+        }
+        
+        // 获取随机日期
+        function getRandomDate() {
+            return `2026-03-${Math.floor(Math.random() * 30) + 1}`;
+        }
+        
+        // 获取随机来源星球
+        function getRandomOrigin() {
+            const origins = [
+                "欧几里得星系",
+                "希尔伯特维度",
+                "卡尔多星系",
+                "伊瑞姆维度",
+                "希格斯维度",
+                "未知星系"
+            ];
+            return origins[Math.floor(Math.random() * origins.length)];
+        }
+        
+        // 获取随机稀有程度
+        function getRandomRarity() {
+            const rarities = ["普通", "稀有", "罕见", "传说"];
+            return rarities[Math.floor(Math.random() * rarities.length)];
+        }
+        
+        // 生成相关文物
+        function generateRelatedArtifacts(category, currentId, artifacts) {
+            const related = [];
+            const count = 3;
+            
+            // 筛选同分类的文物
+            const sameCategoryArtifacts = artifacts.filter(a => a.category === category && a.id !== currentId);
+            
+            // 随机选择相关文物
+            for(let i = 0; i < count && related.length < sameCategoryArtifacts.length; i++) {
+                const randomIndex = Math.floor(Math.random() * sameCategoryArtifacts.length);
+                const randomArtifact = sameCategoryArtifacts[randomIndex];
+                
+                if (!related.some(item => item.id === randomArtifact.id)) {
+                    related.push(randomArtifact);
+                }
+            }
+            
+            return related;
+        }
+        
+        // 页面加载完成后初始化
+        document.addEventListener('DOMContentLoaded', async function() {
+            const artifactId = getUrlParam('id') || 'at_1';
+            await generateArtifactDetail(artifactId);
+        });
+    </script>
+</body>
+</html>

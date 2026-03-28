@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>无人深空博物馆</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1>无人深空博物馆</h1>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="active">首页</a>
+                <a href="categories.html">文物分类</a>
+                <a href="search.html">搜索</a>
+                <a href="about.html">关于</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- 访问次数显示 -->
+    <div style="background: rgba(10, 25, 47, 0.8); border-bottom: 1px solid rgba(0, 240, 255, 0.3); padding: 10px 0;">
+        <div class="container">
+            <div style="display: flex; justify-content: flex-end; align-items: center;">
+                <div style="color: #00f0ff; font-size: 0.9rem; display: flex; align-items: center; gap: 5px;">
+                    <span>🌌</span>
+                    <span>博物馆访问量: <span id="home-visitor-count" style="font-weight: bold;">0</span> 次</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 英雄区域 -->
+    <header class="hero">
+        <div class="container">
+            <h1 class="hero-title">探索宇宙的奥秘</h1>
+            <p class="hero-subtitle">穿越星际，发现无人深空中的珍贵文物</p>
+            <a href="categories.html" class="btn primary-btn">开始探索</a>
+        </div>
+    </header>
+    
+    <!-- 博物馆简介 -->
+    <section class="about">
+        <div class="container">
+            <h2 class="section-title">博物馆简介</h2>
+            <div class="about-content">
+                <p>无人深空博物馆致力于收集和展示游戏《无人深空》中的各类珍贵文物。这些文物来自宇宙的各个角落，记录着不同文明的历史和文化。</p>
+                <p>我们的博物馆按文物类型进行分类，包括阿特拉斯相关、生物标本、技术装置等多个类别，为您提供全面的宇宙文化体验。</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 特色文物展示 -->
+    <section class="featured">
+        <div class="container">
+            <h2 class="section-title">特色文物</h2>
+            <div class="featured-grid" id="featured-artifacts">
+                <!-- 特色文物将通过JavaScript动态生成 -->
+                <div style="display: flex; justify-content: center; align-items: center; height: 400px;">
+                    <div class="loading"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 快速分类导航 -->
+    <section class="quick-nav">
+        <div class="container">
+            <h2 class="section-title">快速导航</h2>
+            <div class="category-grid">
+                <a href="category.html?type=at" class="category-card">
+                    <img src="uploads/at/at_1.png" alt="阿特拉斯文物" class="category-image" style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px; margin-bottom: 15px; border: 2px solid rgba(0, 240, 255, 0.3);">
+                    <h3>阿特拉斯文物</h3>
+                    <p>与阿特拉斯相关的神秘文物</p>
+                </a>
+                <a href="category.html?type=bz" class="category-card">
+                    <img src="uploads/bz/bz_1.png" alt="标本类文物" class="category-image" style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px; margin-bottom: 15px; border: 2px solid rgba(0, 240, 255, 0.3);">
+                    <h3>标本类文物</h3>
+                    <p>各类生物和植物标本</p>
+                </a>
+                <a href="category.html?type=js" class="category-card">
+                    <img src="uploads/js/js_1.png" alt="技术装置" class="category-image" style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px; margin-bottom: 15px; border: 2px solid rgba(0, 240, 255, 0.3);">
+                    <h3>技术装置</h3>
+                    <p>先进的科技设备</p>
+                </a>
+                <a href="category.html?type=sw" class="category-card">
+                    <img src="uploads/sw/sw_1.png" alt="生物文物" class="category-image" style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px; margin-bottom: 15px; border: 2px solid rgba(0, 240, 255, 0.3);">
+                    <h3>生物文物</h3>
+                    <p>各种奇特的生物样本</p>
+                </a>
+                <a href="category.html?type=wx" class="category-card">
+                    <img src="uploads/wx/wx_1.png" alt="文献资料" class="category-image" style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px; margin-bottom: 15px; border: 2px solid rgba(0, 240, 255, 0.3);">
+                    <h3>文献资料</h3>
+                    <p>古老的文字和记录</p>
+                </a>
+                <a href="category.html?type=yw" class="category-card">
+                    <img src="uploads/yw/yw_1.png" alt="遗物类文物" class="category-image" style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px; margin-bottom: 15px; border: 2px solid rgba(0, 240, 255, 0.3);">
+                    <h3>遗物类文物</h3>
+                    <p>古代文明的遗留物品</p>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 搜索区域 -->
+    <section class="search-section">
+        <div class="container">
+            <h2 class="section-title">搜索文物</h2>
+            <form action="search.html" method="get" class="search-form">
+                <input type="text" name="q" placeholder="输入文物名称或关键词..." class="search-input">
+                <button type="submit" class="btn primary-btn">搜索</button>
+            </form>
+        </div>
+    </section>
+    
+
+    
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 无人深空博物馆</p>
+        </div>
+    </footer>
+    
+    <script src="js/analytics.js"></script>
+    <script src="js/interaction.js"></script>
+    <script src="js/api.js"></script>
+    <script>
+        // 导航栏激活状态管理
+        function setActiveNavLink() {
+            const currentPath = window.location.pathname;
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            navLinks.forEach(link => {
+                const linkPath = new URL(link.href).pathname;
+                if (currentPath === linkPath) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        }
+        
+        // 获取图片的正确路径
+        function getImagePath(image) {
+            // 从图片文件名中提取分类
+            const parts = image.split('_');
+            if (parts.length >= 2) {
+                const category = parts[0];
+                return `uploads/${category}/${image}`;
+            }
+            return image;
+        }
+        
+        // 加载特色文物
+        async function loadFeaturedArtifacts() {
+            try {
+                const response = await fetch('data/artifacts.json');
+                const artifacts = await response.json();
+                
+                // 按浏览量排序，获取浏览量最高的3件文物
+                const sorted = artifacts.sort((a, b) => {
+                    const viewsA = parseInt(localStorage.getItem(`artifact_views_${a.id}`)) || 0;
+                    const viewsB = parseInt(localStorage.getItem(`artifact_views_${b.id}`)) || 0;
+                    return viewsB - viewsA;
+                });
+                const featured = sorted.slice(0, 3);
+                
+                const featuredGrid = document.getElementById('featured-artifacts');
+                featuredGrid.innerHTML = '';
+                
+                featured.forEach(artifact => {
+                    const likeCount = parseInt(localStorage.getItem(`artifact_likes_${artifact.id}`)) || 0;
+                    const viewCount = parseInt(localStorage.getItem(`artifact_views_${artifact.id}`)) || 0;
+                    
+                    const card = document.createElement('div');
+                    card.className = 'artifact-card';
+                    const imagePath = getImagePath(artifact.image);
+                    card.innerHTML = `
+                        <img src="${imagePath}" alt="${artifact.name}">
+                        <div class="card-content" data-artifact-id="${artifact.id}">
+                            <h3 class="artifact-name">${artifact.name}</h3>
+                            <p>${artifact.description.substring(0, 100)}...</p>
+                            <div class="stats-row" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; font-size: 0.9rem; color: #00f0ff;">
+                                <span class="like-stat">❤️ ${likeCount} 点赞</span>
+                                <span class="view-stat">👁️ ${viewCount} 浏览</span>
+                            </div>
+                            <div class="btn-group" style="display: flex; gap: 10px; margin-top: 15px;">
+                                <button class="btn secondary-btn like-button" data-artifact-id="${artifact.id}">
+                                    <span class="like-icon">❤️</span>
+                                    <span>点赞</span>
+                                    <span class="like-count">${likeCount}</span>
+                                </button>
+                                <button class="btn secondary-btn share-button" data-artifact-id="${artifact.id}">
+                                    <span class="share-icon">📤</span>
+                                    <span>分享</span>
+                                </button>
+                                <a href="artifact.html?id=${artifact.id}" class="btn primary-btn" style="flex: 1; display: flex; align-items: center; justify-content: center;">查看详情</a>
+                            </div>
+                        </div>
+                    `;
+                    featuredGrid.appendChild(card);
+                });
+                
+                // 重新初始化互动功能，为动态生成的按钮绑定事件监听器
+                initLikeFunctionality();
+                initShareFunctionality();
+                restoreLikeStatus();
+            } catch (error) {
+                console.error('加载特色文物失败:', error);
+                const featuredGrid = document.getElementById('featured-artifacts');
+                featuredGrid.innerHTML = `
+                    <div style="text-align: center; padding: 100px;">
+                        <h3>加载失败</h3>
+                        <p>无法加载特色文物数据</p>
+                    </div>
+                `;
+            }
+        }
+        
+        // 页面加载完成后初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            setActiveNavLink();
+            loadFeaturedArtifacts();
+        });
+    </script>
+</body>
+</html>

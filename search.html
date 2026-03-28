@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>搜索 - 无人深空博物馆</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .search-results {
+            background: rgba(23, 42, 69, 0.8);
+            border-radius: 10px;
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .search-form {
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+        
+        .search-query {
+            color: #00f0ff;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .search-count {
+            color: #8892b0;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .result-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .result-card {
+            background: rgba(10, 25, 47, 0.6);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .result-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 240, 255, 0.3);
+            border-color: #00f0ff;
+        }
+        
+        .result-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+        }
+        
+        .result-card .card-content {
+            padding: 20px;
+        }
+        
+        .result-card h3 {
+            color: #ffffff;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .result-card p {
+            color: #8892b0;
+            margin-bottom: 15px;
+        }
+        
+        .result-category {
+            display: inline-block;
+            background: rgba(0, 240, 255, 0.1);
+            color: #00f0ff;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-bottom: 15px;
+            border: 1px solid rgba(0, 240, 255, 0.3);
+        }
+        
+        .no-results {
+            text-align: center;
+            padding: 100px 20px;
+        }
+        
+        .no-results h3 {
+            color: #ffffff;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        
+        .no-results p {
+            color: #8892b0;
+            margin-bottom: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .search-results {
+                padding: 20px;
+            }
+            
+            .result-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 背景星空效果 -->
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+    
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1>无人深空博物馆</h1>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">首页</a>
+                <a href="categories.html">文物分类</a>
+                <a href="search.html" class="active">搜索</a>
+                <a href="about.html">关于</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- 搜索区域 -->
+    <section class="search-section">
+        <div class="container">
+            <h2 class="section-title">搜索文物</h2>
+            <form action="search.html" method="get" class="search-form">
+                <input type="text" name="q" placeholder="输入文物名称或关键词..." class="search-input" id="search-input">
+                <button type="submit" class="btn primary-btn">搜索</button>
+            </form>
+        </div>
+    </section>
+    
+    <!-- 搜索结果 -->
+    <section class="results">
+        <div class="container">
+            <div class="search-results" id="search-results">
+                <!-- 搜索结果将通过JavaScript动态生成 -->
+                <div class="loading" style="margin: 100px auto;"></div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 无人深空博物馆 | 本地部署版本</p>
+        </div>
+    </footer>
+    
+    <script src="js/analytics.js"></script>
+    <script src="js/interaction.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // 分类数据
+        const categoryData = {
+            "at": { "name": "阿特拉斯文物", "description": "与阿特拉斯相关的神秘文物" },
+            "bz": { "name": "标本类文物", "description": "各类生物和植物标本" },
+            "js": { "name": "技术装置", "description": "先进的科技设备" },
+            "sw": { "name": "生物文物", "description": "各种奇特的生物样本" },
+            "sy": { "name": "生物标本", "description": "详细的生物标本记录" },
+            "wx": { "name": "文献资料", "description": "古老的文字和记录" },
+            "yw": { "name": "遗物类文物", "description": "古代文明的遗留物品" },
+            "zg": { "name": "植物文物", "description": "珍稀的植物样本" },
+            "zw": { "name": "植物标本", "description": "详细的植物标本记录" }
+        };
+        
+        // 所有文物数据
+        let allArtifacts = [];
+        
+        // 加载文物数据
+        async function loadArtifactData() {
+            try {
+                console.log('开始加载文物数据...');
+                const response = await fetch('data/artifacts.json');
+                console.log('响应状态:', response.status);
+                if (!response.ok) {
+                    throw new Error(`HTTP 错误! 状态: ${response.status}`);
+                }
+                const data = await response.json();
+                console.log('数据加载成功:', data.length);
+                allArtifacts = data;
+                return true;
+            } catch (error) {
+                console.error('加载文物数据失败:', error);
+                return false;
+            }
+        }
+        
+        // 获取URL参数
+        function getUrlParam(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+        
+        // 搜索文物
+        function searchArtifacts(query) {
+            if (!query) return [];
+            
+            const lowerQuery = query.toLowerCase();
+            return allArtifacts.filter(artifact => {
+                return (
+                    artifact.name.toLowerCase().includes(lowerQuery) ||
+                    artifact.description.toLowerCase().includes(lowerQuery) ||
+                    artifact.categoryName.toLowerCase().includes(lowerQuery)
+                );
+            });
+        }
+        
+        // 生成搜索结果
+        async function generateSearchResults() {
+            const query = getUrlParam('q') || '';
+            const searchInput = document.getElementById('search-input');
+            if (searchInput) {
+                searchInput.value = query;
+            }
+            
+            const searchResults = document.getElementById('search-results');
+            
+            // 加载文物数据
+            const loaded = await loadArtifactData();
+            if (!loaded) {
+                searchResults.innerHTML = `
+                    <div class="no-results">
+                        <h3>数据加载失败</h3>
+                        <p>无法加载文物数据，请刷新页面重试</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            const results = searchArtifacts(query);
+            
+            if (!query) {
+                searchResults.innerHTML = `
+                    <div class="no-results">
+                        <h3>请输入搜索关键词</h3>
+                        <p>在上方搜索框中输入文物名称或关键词，开始探索宇宙文物</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            if (results.length === 0) {
+                searchResults.innerHTML = `
+                    <div class="search-query">搜索: ${query}</div>
+                    <div class="search-count">未找到相关文物</div>
+                    <div class="no-results">
+                        <h3>未找到相关文物</h3>
+                        <p>请尝试使用其他关键词进行搜索</p>
+                        <a href="index.html" class="btn primary-btn">返回首页</a>
+                    </div>
+                `;
+                return;
+            }
+            
+            searchResults.innerHTML = `
+                <div class="search-query">搜索: ${query}</div>
+                <div class="search-count">找到 ${results.length} 件相关文物</div>
+                <div class="result-grid">
+                    ${results.map(artifact => {
+                        const likeCount = parseInt(localStorage.getItem(`artifact_likes_${artifact.id}`)) || 0;
+                        const viewCount = parseInt(localStorage.getItem(`artifact_views_${artifact.id}`)) || 0;
+                        return `
+                            <div class="result-card">
+                                <img src="${artifact.image}" alt="${artifact.name}">
+                                <div class="card-content" data-artifact-id="${artifact.id}">
+                                    <span class="result-category">${artifact.categoryName}</span>
+                                    <h3 class="artifact-name">${artifact.name}</h3>
+                                    <p>${artifact.description.substring(0, 100)}...</p>
+                                    <div class="stats-row" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; font-size: 0.9rem; color: #00f0ff;">
+                                        <span class="like-stat">❤️ ${likeCount} 点赞</span>
+                                        <span class="view-stat">👁️ ${viewCount} 浏览</span>
+                                    </div>
+                                    <div class="btn-group" style="display: flex; gap: 10px; margin-top: 15px;">
+                                        <button class="btn secondary-btn like-button" data-artifact-id="${artifact.id}">
+                                            <span class="like-icon">❤️</span>
+                                            <span>点赞</span>
+                                            <span class="like-count">${likeCount}</span>
+                                        </button>
+                                        <button class="btn secondary-btn share-button" data-artifact-id="${artifact.id}">
+                                            <span class="share-icon">📤</span>
+                                            <span>分享</span>
+                                        </button>
+                                        <a href="artifact.html?id=${artifact.id}" class="btn primary-btn" style="flex: 1; display: flex; align-items: center; justify-content: center;">查看详情</a>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    }).join('')}
+                </div>
+            `;
+            
+            // 重新初始化互动功能，为动态生成的按钮绑定事件监听器
+            initLikeFunctionality();
+            initShareFunctionality();
+            restoreLikeStatus();
+        }
+        
+        // 页面加载完成后初始化
+        document.addEventListener('DOMContentLoaded', async function() {
+            await generateSearchResults();
+        });
+    </script>
+</body>
+</html>
